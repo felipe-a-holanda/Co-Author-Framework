@@ -1,11 +1,11 @@
 # Co-Author-Framework
 
-Framework de co-autoria assistida por IA para criação de roteiros, narrativas e obras dramáticas.
+Arquitetura modular para escrita dramática assistida por IA, projetada para manter coerência estrutural, profundidade psicológica e integridade temática ao longo de projetos longos.
 
 ## O que este framework faz
 
 Este repositório é um **sistema de trabalho** para escrever com IA de forma controlada.
-Em vez de tratar o roteiro como um único arquivo “solto”, ele força um ciclo consistente:
+Em vez de tratar o roteiro como um único arquivo "solto", ele força um ciclo consistente:
 
 - **Atlas como fonte de verdade**: tema, estrutura, personagens, universo e continuidade.
 - **Cenas como unidades de mudança**: cada cena deve alterar estado narrativo.
@@ -25,6 +25,22 @@ O resultado esperado é:
 3. Você escreve cenas em `atos/`.
 4. Você usa comandos (ex.: `/expandir-cena`, `/subtexto-maximo`) para reescrever cenas com objetivo dramatúrgico.
 5. Você mantém `continuidade.md` e `status.md` atualizados, para a IA nunca perder o estado do projeto.
+
+O processo é cíclico: **estruturar → escrever → auditar → atualizar estado → reescrever**.
+
+## Por que não escrever direto com IA?
+
+LLMs tendem a:
+
+- Repetir padrões genéricos.
+- Perder continuidade em projetos longos.
+- Reescrever estrutura sem intenção.
+
+O Co-Author Framework existe para introduzir:
+
+- **Estado explícito** — o mundo narrativo é travado em arquivos versionáveis.
+- **Função dramática consciente** — cada cena tem papel estrutural declarado.
+- **Governança de edição** — o nível de liberdade do agente é configurável.
 
 ## Arquitetura — v3.0
 
@@ -179,4 +195,9 @@ Revise e atualize `projetos/<roteiro>/atlas/continuidade.md`. Esse arquivo é o 
 
 ### A IA está reescrevendo sem respeitar o nível de liberdade
 
-Abra `projetos/<roteiro>/status.md` e confira o modo marcado (Restrito/Colaborativo/Autônomo).
+Abra `projetos/<roteiro>/status.md`. Esse arquivo controla duas dimensões independentes:
+
+- **Fase** — estágio do projeto (ex.: Inicialização, Estruturação, Polimento).
+- **Nível de Liberdade** — quanto o agente pode intervir (Restrito / Colaborativo / Autônomo).
+
+Confira se ambos estão configurados corretamente para o momento atual do roteiro.
