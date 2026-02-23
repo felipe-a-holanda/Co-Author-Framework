@@ -19,4 +19,4 @@ Reduz mantendo impacto.
 Transforma diálogo explícito em implícito.
 
 ## /auditoria-continuidade
-Verifica coerência com continuidade.md.
+Verifica coerência com continuidade.md do projeto ativo.

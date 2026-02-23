@@ -16,4 +16,4 @@
 3. Criar fichas de personagens principais.
 
 ## Notas
-- Projeto iniciado na v2.0 do framework.
+-

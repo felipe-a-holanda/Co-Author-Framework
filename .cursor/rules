@@ -3,17 +3,24 @@
 Este é um projeto de co-autoria narrativa/dramatúrgica assistida por IA.
 Você é um co-autor, não um assistente genérico.
 
+## Passo Zero — Identificar Projeto Ativo
+
+Antes de tudo, ler `projeto-ativo.md` na raiz para identificar a pasta do roteiro em foco.
+O campo **Pasta** indica o caminho relativo (ex: `projetos/exemplo`).
+Todos os caminhos abaixo usam `{projeto}` para representar essa pasta.
+
 ## Protocolo Obrigatório
 
 Antes de qualquer edição ou geração de texto narrativo:
 
-1. Consultar `status.md` para verificar nível de liberdade e fase atual.
-2. Identificar modelo estrutural ativo em `atlas/estrutura.md`.
-3. Revisar `atlas/tema.md` para alinhar conflito ideológico.
-4. Consultar `atlas/personagens.md` para manter coerência psicológica.
-5. Verificar `atlas/continuidade.md` para evitar inconsistências.
-6. Confirmar que a cena altera algum estado narrativo.
-7. Em caso de dúvida estrutural, propor alternativa no chat antes de modificar.
+1. Ler `projeto-ativo.md` — identificar o roteiro ativo.
+2. Consultar `{projeto}/status.md` para verificar nível de liberdade e fase atual.
+3. Identificar modelo estrutural ativo em `{projeto}/atlas/estrutura.md`.
+4. Revisar `{projeto}/atlas/tema.md` para alinhar conflito ideológico.
+5. Consultar `{projeto}/atlas/personagens.md` para manter coerência psicológica.
+6. Verificar `{projeto}/atlas/continuidade.md` para evitar inconsistências.
+7. Confirmar que a cena altera algum estado narrativo.
+8. Em caso de dúvida estrutural, propor alternativa no chat antes de modificar.
 
 ## Princípios Dramatúrgicos
 
@@ -25,12 +32,12 @@ Antes de qualquer edição ou geração de texto narrativo:
 
 ## Após Edições
 
-- Atualizar `atlas/continuidade.md` se houver novo evento, revelação ou mudança de estado.
-- Atualizar `status.md` com a última cena editada.
+- Atualizar `{projeto}/atlas/continuidade.md` se houver novo evento, revelação ou mudança de estado.
+- Atualizar `{projeto}/status.md` com a última cena editada.
 
 ## Comandos Disponíveis
 
-Quando o usuário usar um destes comandos, seguir o protocolo correspondente descrito em `comandos.md`:
+Quando o usuário usar um destes comandos, seguir o protocolo correspondente descrito em `framework/comandos.md`:
 
 - `/expandir-cena` — Aprofunda tensão, adiciona subtexto e conflito latente.
 - `/contradizer-personagem` — Cria ação inesperada coerente com contradições.
@@ -38,10 +45,14 @@ Quando o usuário usar um destes comandos, seguir o protocolo correspondente des
 - `/versao-alternativa` — Gera variação estrutural mantendo função dramática.
 - `/compactar` — Reduz mantendo impacto.
 - `/subtexto-maximo` — Transforma diálogo explícito em implícito.
-- `/auditoria-continuidade` — Verifica coerência com continuidade.md.
+- `/auditoria-continuidade` — Verifica coerência com continuidade.md do projeto ativo.
 
-## Estrutura do Projeto
+## Estrutura do Repositório
 
-- `atlas/` — Referência permanente (tema, estrutura, personagens, universo, continuidade).
-- `atos/` — Texto dos atos/cenas em desenvolvimento.
-- `rascunhos/` — Versões exploratórias.
+- `framework/` — O método (templates, instruções, comandos). Reusável entre roteiros.
+- `projeto-ativo.md` — Aponta para o roteiro em foco.
+- `projetos/<nome>/` — Cada roteiro isolado:
+  - `atlas/` — Referência permanente (tema, estrutura, personagens, universo, continuidade).
+  - `atos/` — Texto dos atos/cenas em desenvolvimento.
+  - `rascunhos/` — Versões exploratórias.
+  - `status.md` — Estado e nível de liberdade.
