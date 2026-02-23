@@ -1,0 +1,10 @@
+# Editor temporaries
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# IDE settings (keep .windsurf and .cursor tracked)
+.vscode/
+.idea/
