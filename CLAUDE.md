@@ -148,6 +148,23 @@ Or run: `./novo-roteiro.sh <name>`
 
 All IDE configurations enforce the same core protocol and principles.
 
+## Obsidian Conventions
+
+Projects can be opened as Obsidian vaults (each project individually or the entire repo). When editing or generating Markdown inside `{projeto}/`, follow these rules:
+
+### Wikilinks
+- Use `[[filename]]` for cross-references: `[[personagens]]`, `[[continuidade]]`, `[[tema]]`, `[[estrutura]]`, `[[universo]]`
+- Use `[[file#Section]]` for specific sections: `[[personagens#Maria]]`, `[[estrutura#Cena/Sequência 3]]`
+- Use `[[file#Section|display text]]` for aliases: `[[personagens#Maria|the protagonist]]`
+- In scenes (`atos/`), link relevant characters and events: `[[personagens#João]]`, `[[continuidade#Eventos Irreversíveis]]`
+
+### Tags (optional)
+- Use `#tag` for narrative state when useful: `#não-revelado`, `#irreversível`, `#subtrama-aberta`
+
+### Compatibility rules
+- Use filename only in wikilinks (no path, no `.md`): `[[personagens]]`, NOT `[[atlas/personagens.md]]`
+- This ensures links work whether the vault is the individual project or the entire repo
+
 ## Key Behavioral Notes
 
 - Always prioritize narrative consistency over convenient plot resolutions

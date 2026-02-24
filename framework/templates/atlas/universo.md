@@ -4,7 +4,7 @@
 [Descrição geral do mundo, época, lugar.]
 
 ## Regras do Mundo
-[O que é possível e impossível neste universo.]
+[O que é possível e impossível neste universo. Impacta [[personagens]] e [[estrutura]].]
 
 ## Grau de Realismo
 ( ) Realismo estrito
@@ -13,7 +13,7 @@
 ( ) Alegórico
 
 ## O que é invisível mas governa o mundo?
-(Forças estruturais, ideologias, algoritmos, deuses, mercado, etc.)
+(Forças estruturais, ideologias, algoritmos, deuses, mercado, etc. Relação com [[tema]].)
 
 ## Atmosfera e Tom
 [Sombrio? Irônico? Lírico? Documental?]

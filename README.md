@@ -66,11 +66,13 @@ O **método** (framework) e o **produto** (roteiro) são separados. Múltiplos r
 │
 ├── projetos/                       # OS PRODUTOS (um por roteiro)
 │   └── <nome-do-roteiro>/
+│       ├── .obsidian/              # Config Obsidian (vault do projeto)
 │       ├── atlas/                  # Preenchido com conteúdo real
 │       ├── atos/                   # Cenas em desenvolvimento
 │       ├── rascunhos/              # Versões exploratórias
 │       └── status.md               # Estado e nível de liberdade
 │
+├── .obsidian/                      # Config Obsidian (vault raiz)
 ├── .windsurf/                      # Config IDE
 │   ├── rules
 │   └── workflows/
@@ -177,6 +179,47 @@ O importante é:
 - `/subtexto-maximo` — Transforma diálogo explícito em implícito.
 - `/auditoria-continuidade` — Verifica coerência narrativa.
 
+## Uso com Obsidian
+
+Cada projeto e o repositório inteiro podem ser abertos como **vaults do Obsidian**.
+
+### Dois modos de uso
+
+- **Vault por projeto** — Abra `projetos/<nome>/` como vault. Ideal para foco em um roteiro.
+- **Vault raiz** — Abra a raiz do repositório como vault. Ideal para visão global e navegação entre projetos.
+
+Ambos os modos são compatíveis simultaneamente. Os `[[wikilinks]]` usam apenas nome de arquivo (sem caminho), e o Obsidian resolve pelo caminho mais curto.
+
+### Convenções de wikilinks
+
+| Sintaxe | Uso |
+|---|---|
+| `[[personagens]]` | Link para o arquivo inteiro |
+| `[[personagens#Maria]]` | Link para seção específica |
+| `[[personagens#Maria\|a protagonista]]` | Link com texto de exibição |
+
+Os templates do atlas já vêm com wikilinks entre si. Ao escrever cenas em `atos/`, use links para personagens e eventos:
+
+```markdown
+[[personagens#João]] entra na sala. O [[continuidade#Objetos Dramáticos|revólver]] está sobre a mesa.
+```
+
+### Tags (opcional)
+
+Use tags para marcar estado narrativo: `#não-revelado`, `#irreversível`, `#subtrama-aberta`.
+
+### Configuração automática
+
+O script `novo-roteiro.sh` já cria `.obsidian/app.json` em cada projeto com:
+- Wikilinks ativados (não Markdown links)
+- Formato de link mais curto (compatível com ambos os modos de vault)
+
+Para o vault raiz, `.obsidian/app.json` já existe na raiz do repositório com a mesma config.
+
+### Graph View
+
+No Obsidian, use **Graph View** para visualizar as conexões entre atlas, cenas e personagens. Quanto mais wikilinks nos seus arquivos, mais útil será o grafo.
+
 ## Configuração de IDE
 
 - **.windsurf/rules** + **workflows/** — Windsurf/Cascade.
@@ -201,3 +244,13 @@ Abra `projetos/<roteiro>/status.md`. Esse arquivo controla duas dimensões indep
 - **Nível de Liberdade** — quanto o agente pode intervir (Restrito / Colaborativo / Autônomo).
 
 Confira se ambos estão configurados corretamente para o momento atual do roteiro.
+
+### Os wikilinks não funcionam no Obsidian
+
+Verifique se você abriu a pasta correta como vault:
+- Para um projeto: `projetos/<nome>/`
+- Para visão global: a raiz do repositório
+
+Confirme que em **Settings > Files & Links**:
+- "Use [[Wikilinks]]" está ativado
+- "New link format" está em "Shortest path when possible"

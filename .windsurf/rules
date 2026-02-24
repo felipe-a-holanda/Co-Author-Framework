@@ -35,6 +35,17 @@ Antes de qualquer edição ou geração de texto narrativo:
 - Atualizar `{projeto}/atlas/continuidade.md` se houver novo evento, revelação ou mudança de estado.
 - Atualizar `{projeto}/status.md` com a última cena editada.
 
+## Convenções Obsidian
+
+Os projetos podem ser abertos como vaults do Obsidian (cada projeto isolado ou o repositório inteiro). Ao editar ou gerar Markdown dentro de `{projeto}/`, seguir:
+
+- Usar `[[nome-do-arquivo]]` para cross-references: `[[personagens]]`, `[[continuidade]]`, `[[tema]]`, `[[estrutura]]`, `[[universo]]`.
+- Usar `[[arquivo#Seção]]` para seções: `[[personagens#Maria]]`, `[[estrutura#Cena/Sequência 3]]`.
+- Usar `[[arquivo#Seção|texto]]` para alias: `[[personagens#Maria|a protagonista]]`.
+- Em cenas (`atos/`), linkar personagens e eventos: `[[personagens#João]]`, `[[continuidade#Eventos Irreversíveis]]`.
+- Tags opcionais para estado narrativo: `#não-revelado`, `#irreversível`, `#subtrama-aberta`.
+- Apenas nomes de arquivo nos links (sem caminho, sem `.md`): `[[personagens]]`, não `[[atlas/personagens.md]]`.
+
 ## Estrutura do Repositório
 
 - `framework/` — O método (templates, instruções, comandos). Reusável entre roteiros.

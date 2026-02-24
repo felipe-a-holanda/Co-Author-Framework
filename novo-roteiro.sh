@@ -34,6 +34,16 @@ cp "$TEMPLATES_DIR/atlas/continuidade.md" "$DESTINO/atlas/"
 cp "$TEMPLATES_DIR/status.md" "$DESTINO/"
 cp "$TEMPLATES_DIR/rascunhos/README.md" "$DESTINO/rascunhos/"
 
+# Obsidian: criar config mínima para vault do projeto
+mkdir -p "$DESTINO/.obsidian"
+cat > "$DESTINO/.obsidian/app.json" << 'OBSIDIAN'
+{
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "showLineNumber": true
+}
+OBSIDIAN
+
 # Atualiza projeto-ativo.md
 cat > "$SCRIPT_DIR/projeto-ativo.md" << EOF
 # Projeto Ativo

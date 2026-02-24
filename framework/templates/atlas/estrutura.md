@@ -17,9 +17,10 @@
 - Função Dramática:
 - Conflito Primário:
 - Conflito Secundário:
-- Mudança de Estado:
+- Mudança de Estado: (registrar em [[continuidade]])
 - Informação Revelada:
-- Relação com o Tema:
+- Relação com o [[tema]]:
+- Personagens envolvidos: [[personagens#Nome]]
 
 ### Cena/Sequência 2
 (...)
