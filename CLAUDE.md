@@ -115,10 +115,30 @@ These commands reference workflows in `.windsurf/workflows/` or are conceptual o
 - **`/compactar`** — Reduce length while preserving impact
 - **`/subtexto-maximo`** — Convert explicit dialogue to implicit
 - **`/auditoria-continuidade`** — Verify coherence with continuidade.md (checks timeline, irreversible events, secrets, dramatic objects, subplots)
+- **`/importar`** — Import an existing screenplay document into the framework structure. Usage: `/importar <file-path> <project-name>`
 
 ## Workflow Execution Pattern
 
-Example for `/expandir-cena`:
+### `/importar <file-path> <project-name>`
+
+1. Validate that `<file-path>` exists and `projetos/<project-name>/` does not (warn if it does)
+2. Create full directory structure under `projetos/<project-name>/` from `framework/templates/`
+3. Read the source document in full
+4. Perform dramaturgical analysis and populate atlas files:
+   - `atlas/tema.md` — central dramatic question, thesis/antithesis, secondary tensions
+   - `atlas/personagens.md` — all significant characters with full profiles
+   - `atlas/estrutura.md` — structural model, acts, scenes with dramatic functions
+   - `atlas/universo.md` — setting, tone, world rules
+   - `atlas/continuidade.md` — timeline, irreversible events, secrets, dramatic objects, subplots
+5. Mark uncertain inferences with `[inferido — revisar]`
+6. Split screenplay into individual scene files in `atos/` (named `ato1-cena01.md`, etc.)
+   - Each file gets a metadata header with characters, location, and state change
+7. Create `status.md` with autonomy level set to `Modo Colaborativo`
+8. Update `projeto-ativo.md` to point to the new project
+9. Present import report: scenes found, characters mapped, fields needing review, suggested next steps
+- Copy the source document to `rascunhos/` — never delete the original
+
+### Example for `/expandir-cena`:
 
 1. Read `projeto-ativo.md` (identify active project)
 2. Read `{projeto}/atlas/tema.md` (identify central question)
@@ -142,11 +162,18 @@ Or run: `./novo-roteiro.sh <name>`
 
 ## IDE-Specific Configuration
 
-- **`.windsurf/rules`** — Windsurf/Cascade agent rules
-- **`.windsurf/workflows/`** — Slash commands for Windsurf
-- **`.cursor/rules`** — Cursor agent rules
+Supported coding agents and their configuration paths:
+
+| Agent       | Rules/Config            | Slash Commands / Workflows      |
+|-------------|-------------------------|---------------------------------|
+| Windsurf    | `.windsurf/rules`       | `.windsurf/workflows/`          |
+| Cursor      | `.cursor/rules`         | `.cursor/commands/`             |
+| Claude Code | `CLAUDE.md`             | `.claude/skills/`               |
+| Antigravity | `.agent/`               | `.agent/` (inline)              |
 
 All IDE configurations enforce the same core protocol and principles.
+
+**SYNC RULE (MANDATORY):** Whenever a new command or workflow is created or modified in any agent, it must be replicated to all other supported agents. No command should exist in only one agent's configuration. Keep all agents in sync at all times.
 
 ## Obsidian Conventions
 
