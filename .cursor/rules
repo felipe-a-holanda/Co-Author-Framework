@@ -46,6 +46,7 @@ Quando o usuário usar um destes comandos, seguir o protocolo correspondente des
 - `/compactar` — Reduz mantendo impacto.
 - `/subtexto-maximo` — Transforma diálogo explícito em implícito.
 - `/auditoria-continuidade` — Verifica coerência com continuidade.md do projeto ativo.
+- `/importar <arquivo> <nome-do-projeto>` — Importa um roteiro existente para a estrutura do framework, populando o atlas e separando as cenas.
 
 ## Convenções Obsidian
 
