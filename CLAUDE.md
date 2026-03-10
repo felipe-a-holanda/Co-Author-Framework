@@ -116,6 +116,7 @@ These commands reference workflows in `.windsurf/workflows/` or are conceptual o
 - **`/subtexto-maximo`** — Convert explicit dialogue to implicit
 - **`/auditoria-continuidade`** — Verify coherence with continuidade.md (checks timeline, irreversible events, secrets, dramatic objects, subplots)
 - **`/importar`** — Import an existing screenplay document into the framework structure. Usage: `/importar <file-path> <project-name>`
+- **`/rascunho`** — Create a scene draft from a prompt, reading the full atlas for context. Usage: `/rascunho <scene description>`
 
 ## Workflow Execution Pattern
 
