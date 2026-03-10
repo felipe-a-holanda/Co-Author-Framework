@@ -11,3 +11,6 @@ Thumbs.db
 
 # Obsidian (config local de cada vault)
 .obsidian/
+
+# Claude Code (override global gitignore)
+!.claude/

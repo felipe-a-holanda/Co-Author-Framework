@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /home/felipe/Dropbox/ai/Co-Author-Framework/.gitignore 2>/dev/null && git check-ignore -v .claude/skills/expandir-cena/SKILL.md)",
+      "Bash(git add:*)"
+    ]
+  }
+}
